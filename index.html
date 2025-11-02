@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MGP Labs - Sites. Design. Branding.</title>
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
     /* For smooth scrolling */
     html {
@@ -13,8 +13,7 @@
     }
   </style>
 </head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PJHP0VTW3F"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJHP0VTW3F"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -25,7 +24,6 @@
 <body class="bg-white text-gray-800">
 
   <div class="min-h-screen">
-    <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b border-gray-200 z-50">
       <div class="container mx-auto px-4 py-3 flex justify-between items-center">
         <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
@@ -37,15 +35,29 @@
           <a href="#team" class="hover:text-blue-500 transition-colors">Team</a>
           <a href="#contact" class="hover:text-blue-500 transition-colors">Contact</a>
         </div>
-        <a href="https://forms.gle/PdfgVWHNsESmTJtg6" target="_blank" rel="noopener noreferrer">
-          <button class="px-4 py-2 rounded-md font-medium transition-colors bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white">
-            Get Started
-          </button>
-        </a>
-      </div>
+        
+        <div class="flex items-center space-x-2">
+            <div id="auth-links" class="flex space-x-2">
+                <button id="login-btn" class="px-4 py-2 rounded-md font-medium transition-colors bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300">
+                    Login
+                </button>
+                <button id="signup-btn" class="px-4 py-2 rounded-md font-medium transition-colors bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white">
+                    Sign Up
+                </button>
+            </div>
+            <div id="user-links" class="hidden flex space-x-2 items-center">
+                <span id="user-email" class="text-sm text-gray-600 hidden md:block" title="Logged in as"></span>
+                <a href="dashboard.html" class="px-4 py-2 rounded-md font-medium transition-colors bg-blue-500 hover:bg-blue-600 text-white">
+                    My Project
+                </a>
+                <button id="logout-btn" class="px-2 py-2 rounded-md font-medium transition-colors hover:bg-gray-200 text-gray-600" title="Logout">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                </button>
+            </div>
+        </div>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="min-h-screen flex items-center pt-16 bg-cover bg-center" style="background-image: url('https://s.tmimgcdn.com/scr/800x500/51400/free-html5-website-templates-bundle-pack-website-template_51490-big.jpg');">
       <div class="container mx-auto px-4 py-20 flex flex-col items-center text-center bg-black bg-opacity-50 rounded-lg">
         <div class="relative mb-8">
@@ -64,7 +76,6 @@
         </a>
         
         <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl">
-          <!-- Icon 1: Code -->
           <div class="flex flex-col items-center">
             <div class="p-4 bg-gray-200 rounded-full mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-blue-500">
@@ -72,9 +83,8 @@
                     <polyline points="8 6 2 12 8 18"></polyline>
                 </svg>
             </div>
-            <span class="text-gray-600">Web Development</span>
+            <span class="text-gray-300">Web Development</span>
           </div>
-          <!-- Icon 2: Palette -->
           <div class="flex flex-col items-center">
             <div class="p-4 bg-gray-200 rounded-full mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-blue-500">
@@ -85,9 +95,8 @@
                     <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
                 </svg>
             </div>
-            <span class="text-gray-600">UI/UX Design</span>
+            <span class="text-gray-300">UI/UX Design</span>
           </div>
-          <!-- Icon 3: Smartphone -->
           <div class="flex flex-col items-center">
             <div class="p-4 bg-gray-200 rounded-full mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-blue-500">
@@ -95,9 +104,8 @@
                     <line x1="12" y1="18" x2="12.01" y2="18"></line>
                 </svg>
             </div>
-            <span class="text-gray-600">Mobile Apps</span>
+            <span class="text-gray-300">Mobile Apps</span>
           </div>
-          <!-- Icon 4: Globe -->
           <div class="flex flex-col items-center">
             <div class="p-4 bg-gray-200 rounded-full mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-blue-500">
@@ -106,13 +114,12 @@
                     <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                 </svg>
             </div>
-            <span class="text-gray-600">Branding</span>
+            <span class="text-gray-300">Branding</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="py-20 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
@@ -123,7 +130,6 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Service 1 -->
           <div class="rounded-lg border bg-white border-gray-200 hover:border-blue-500 transition-all">
             <div class="p-6">
               <div class="text-blue-500 mb-4">
@@ -138,7 +144,6 @@
               <p class="text-gray-600">Custom websites and web applications built with modern technologies for optimal performance.</p>
             </div>
           </div>
-          <!-- Service 2 -->
           <div class="rounded-lg border bg-white border-gray-200 hover:border-blue-500 transition-all">
             <div class="p-6">
               <div class="text-blue-500 mb-4">
@@ -156,7 +161,6 @@
               <p class="text-gray-600">Beautiful, intuitive interfaces designed to enhance user engagement and satisfaction.</p>
             </div>
           </div>
-          <!-- Service 3 -->
           <div class="rounded-lg border bg-white border-gray-200 hover:border-blue-500 transition-all">
             <div class="p-6">
               <div class="text-blue-500 mb-4">
@@ -175,7 +179,6 @@
       </div>
     </section>
 
-    <!-- UPDATED PORTFOLIO SECTION -->
     <section id="portfolio" class="py-20">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
@@ -186,7 +189,6 @@
         </div>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Project 1 -->
           <div class="rounded-lg border bg-white border-gray-200 overflow-hidden group">
               <img src="https://tpssoft.com/wp-content/uploads/2023/06/76-1024x538.jpg" alt="E-commerce Platform" class="w-full h-48 object-cover">
               <div class="p-4 bg-gray-50">
@@ -194,7 +196,6 @@
                   <p class="text-blue-500 text-sm">Web Development</p>
               </div>
           </div>
-          <!-- Project 2 -->
           <div class="rounded-lg border bg-white border-gray-200 overflow-hidden group">
               <img src="https://media.coschedule.com/uploads/2023/03/Visual-Identity-design-logos-layout-color-font.png" alt="Brand Identity" class="w-full h-48 object-cover">
               <div class="p-4 bg-gray-50">
@@ -202,7 +203,6 @@
                   <p class="text-blue-500 text-sm">Design</p>
               </div>
           </div>
-          <!-- Project 3 -->
           <div class="rounded-lg border bg-white border-gray-200 overflow-hidden group">
               <img src="https://cdn.dribbble.com/userupload/16394212/file/original-c93733561f565d650dce4b759a417fb0.png?resize=400x0" alt="Mobile Banking App" class="w-full h-48 object-cover">
               <div class="p-4 bg-gray-50">
@@ -210,7 +210,6 @@
                   <p class="text-blue-500 text-sm">Mobile</p>
               </div>
           </div>
-          <!-- Project 4 -->
           <div class="rounded-lg border bg-white border-gray-200 overflow-hidden group">
               <img src="https://theincmagazine.com/wp-content/uploads/2025/03/Creating-Visually-Stunning-and-Functional-Business-Websites.jpg" alt="Corporate Website" class="w-full h-48 object-cover">
               <div class="p-4 bg-gray-50">
@@ -218,7 +217,6 @@
                   <p class="text-blue-500 text-sm">Web Development</p>
               </div>
           </div>
-          <!-- Project 5 -->
           <div class="rounded-lg border bg-white border-gray-200 overflow-hidden group">
               <img src="https://cdn.shopify.com/app-store/listing_images/74f3a88ca9004748ce9210ea2cda82ca/desktop_screenshot/CPHLpsP55IgDEAE=.png?height=720&width=1280" alt="Dashboard UI" class="w-full h-48 object-cover">
               <div class="p-4 bg-gray-50">
@@ -226,7 +224,6 @@
                   <p class="text-blue-500 text-sm">Design</p>
               </div>
           </div>
-          <!-- Project 6 -->
           <div class="rounded-lg border bg-white border-gray-200 overflow-hidden group">
               <img src="https://img.freepik.com/free-vector/gradient-fitness-app-template_23-2151095465.jpg?semt=ais_hybrid&w=740&q=80" alt="Fitness Tracker" class="w-full h-48 object-cover">
               <div class="p-4 bg-gray-50">
@@ -238,7 +235,6 @@
       </div>
     </section>
 
-    <!-- Team Section -->
     <section id="team" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -248,7 +244,6 @@
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <!-- Team Member 1 -->
                 <div class="bg-white border border-gray-200 rounded-lg p-6 text-center hover:border-blue-500 transition-all">
                     <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkfZpedqzjivkQhseFlGgYDWtttS7NkkYqqBsuUdFfW7jtNQt1VUg85r8TuEmtVTUcj14LcvQlNqVrKvHcs_gSgEbUOaB-mBQJzpEhpNDZhWmaVmKz-L-yDTRrIgLCkmIlAq5SO6uBco4BTfMuRgSttBYzw1CIpR6LjD6pT5VLDs7-lNZOvr2dbJbDe_NowMGxV6ijvANEAzVfN3lxbeZlIWcJC2p3JLGaIqE34=w1280" 
                          alt="Bilal" 
@@ -256,7 +251,6 @@
                     <h3 class="text-xl font-bold mb-2">Bilal</h3>
                     <p class="text-gray-600">Lead Developer</p>
                 </div>
-                <!-- Team Member 2 -->
                 <div class="bg-white border border-gray-200 rounded-lg p-6 text-center hover:border-blue-500 transition-all">
                     <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkd6xoHt65R0LCjQhuv45CtkhIvyVlU-PtQjQdDqaEC4SVpyAVGKQCcJHg-CVQSqv_Xi5uGbgQAO9GaNTdDKMe7opViEZmBFvWmvyI-ormTaJPRtJjSdixwl9CGU5Yjq__dvH4B_x_JWlKkRt_YxFxrUzI11zBj0QXImME60VLYxSCSJS68d-5RaiSBpRzZxbNgPMmLBbX8dvkv6sY_J3Pk4fLJLp58xZB57=w1280" 
                          alt="MMA" 
@@ -264,7 +258,6 @@
                     <h3 class="text-xl font-bold mb-2">MMA</h3>
                     <p class="text-gray-600">UI/UX Designer</p>
                 </div>
-                <!-- Team Member 3 -->
                 <div class="bg-white border border-gray-200 rounded-lg p-6 text-center hover:border-blue-500 transition-all">
                     <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkcSsBybnWcb4ptW0ldIzjFaZPj9IUCah-AN6H5BjtrH5LD_KnFxZQxqCxzCqSvDY2JUR5VmEJ7IzXmg9JA-pS2UodjtbYfwJDxlAg-s1z3MNm-jZpdbI5LoaShROZsvqz0higJS45Hu-Uf3Nngur-Oz6A7zZ6ZYNjPcTjZirvjG6jv2czEhMSh0MPPAnRCAd5Ajgg2B_c_bZiFCo-yB5Qm4VNa5apDfQEqgQAQ=w1280"
                          alt="Moeez" 
@@ -276,7 +269,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto">
@@ -289,7 +281,6 @@
           
           <div class="rounded-lg border bg-white border-gray-200">
             <div class="p-8">
-              <!-- FORMSPREE INTEGRATION -->
               <form action="https://formspree.io/f/xblpzwvk" method="POST" class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div class="space-y-2">
@@ -335,15 +326,60 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-10 border-t border-gray-200">
       <div class="container mx-auto px-4 text-center">
         <p class="text-gray-500">
-          &copy; <span id="year"></span> MGP Labs. All rights reserved.
+          © <span id="year"></span> MGP Labs. All rights reserved.
           Powered by MGP LABS.
         </p>
       </div>
     </footer>
+  </div>
+
+  <div id="login-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-lg p-8 shadow-2xl w-full max-w-md">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold">Login</h2>
+        <button id="close-login-modal" class="text-gray-500 hover:text-gray-800">&times;</button>
+      </div>
+      <form id="login-form" class="space-y-4">
+        <div>
+          <label for="login-email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="login-email" required class="mt-1 flex h-10 w-full rounded-md border px-3 py-2 text-sm bg-gray-100 border-gray-300 text-gray-800">
+        </div>
+        <div>
+          <label for="login-password" class="block text-sm font-medium text-gray-700">Password</label>
+          <input type="password" id="login-password" required class="mt-1 flex h-10 w-full rounded-md border px-3 py-2 text-sm bg-gray-100 border-gray-300 text-gray-800">
+        </div>
+        <button type="submit" class="w-full px-4 py-2 rounded-md font-medium transition-colors bg-blue-500 hover:bg-blue-600 text-white">
+          Login
+        </button>
+      </form>
+      <p id="login-message" class="text-red-500 text-sm mt-4"></p>
+    </div>
+  </div>
+
+  <div id="signup-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-lg p-8 shadow-2xl w-full max-w-md">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold">Sign Up</h2>
+        <button id="close-signup-modal" class="text-gray-500 hover:text-gray-800">&times;</button>
+      </div>
+      <form id="signup-form" class="space-y-4">
+        <div>
+          <label for="signup-email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="signup-email" required class="mt-1 flex h-10 w-full rounded-md border px-3 py-2 text-sm bg-gray-100 border-gray-300 text-gray-800">
+        </div>
+        <div>
+          <label for="signup-password" class="block text-sm font-medium text-gray-700">Password</label>
+          <input type="password" id="signup-password" minlength="6" required class="mt-1 flex h-10 w-full rounded-md border px-3 py-2 text-sm bg-gray-100 border-gray-300 text-gray-800">
+        </div>
+        <button type="submit" class="w-full px-4 py-2 rounded-md font-medium transition-colors bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white">
+          Create Account
+        </button>
+      </form>
+      <p id="signup-message" class="text-sm mt-4"></p>
+    </div>
   </div>
 
   <script>
@@ -360,5 +396,121 @@
         });
     });
   </script>
-</body>
+
+  <script>
+    const SUPABASE_URL = 'https://ixbgrnppmdjhxhgbxxgq.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4YmdybnBwbWRqaHhoZ2J4eGdxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIwOTMwNDksImV4cCI6MjA3NzY2OTA0OX0.pipxMb_HC9tBPKQzwU7papn-K0cukZc2gBVXjiERWJQ';
+
+    const { createClient } = supabase;
+    const _supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // --- DOM Elements ---
+    const loginBtn = document.getElementById('login-btn');
+    const signupBtn = document.getElementById('signup-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+    
+    const authLinks = document.getElementById('auth-links');
+    const userLinks = document.getElementById('user-links');
+    const userEmailSpan = document.getElementById('user-email');
+
+    const loginModal = document.getElementById('login-modal');
+    const signupModal = document.getElementById('signup-modal');
+    
+    const closeLoginModal = document.getElementById('close-login-modal');
+    const closeSignupModal = document.getElementById('close-signup-modal');
+    
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+    
+    const loginMessage = document.getElementById('login-message');
+    const signupMessage = document.getElementById('signup-message');
+
+    // --- Modal Toggle ---
+    loginBtn.addEventListener('click', () => {
+        loginModal.classList.remove('hidden');
+        loginMessage.textContent = '';
+    });
+    signupBtn.addEventListener('click', () => {
+        signupModal.classList.remove('hidden');
+        signupMessage.textContent = '';
+    });
+    closeLoginModal.addEventListener('click', () => loginModal.classList.add('hidden'));
+    closeSignupModal.addEventListener('click', () => signupModal.classList.add('hidden'));
+    
+    // Close modal on outside click
+    loginModal.addEventListener('click', (e) => {
+        if (e.target === loginModal) loginModal.classList.add('hidden');
+    });
+    signupModal.addEventListener('click', (e) => {
+        if (e.target === signupModal) signupModal.classList.add('hidden');
+    });
+
+    // --- Auth Logic ---
+
+    // Sign Up
+    signupForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('signup-email').value;
+        const password = document.getElementById('signup-password').value;
+
+        const { data, error } = await _supabase.auth.signUp({
+            email: email,
+            password: password,
+        });
+
+        if (error) {
+            signupMessage.textContent = error.message;
+            signupMessage.classList.add('text-red-500');
+            signupMessage.classList.remove('text-green-500');
+        } else {
+            signupMessage.textContent = 'Success! Please check your email to confirm your account.';
+            signupMessage.classList.add('text-green-500');
+            signupMessage.classList.remove('text-red-500');
+            signupForm.reset();
+        }
+    });
+
+    // Login
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+
+        const { data, error } = await _supabase.auth.signInWithPassword({
+            email: email,
+            password: password,
+        });
+
+        if (error) {
+            loginMessage.textContent = error.message;
+        } else {
+            loginModal.classList.add('hidden');
+            loginForm.reset();
+            // Redirect to the dashboard
+            window.location.href = 'dashboard.html';
+        }
+    });
+
+    // Logout
+    logoutBtn.addEventListener('click', async () => {
+        await _supabase.auth.signOut();
+    });
+
+    // --- Auth State Change ---
+    // Listen for changes in auth state (login, logout)
+    _supabase.auth.onAuthStateChange((_event, session) => {
+        if (session) {
+            // User is logged in
+            authLinks.classList.add('hidden');
+            userLinks.classList.remove('hidden');
+            userEmailSpan.textContent = session.user.email;
+        } else {
+            // User is logged out
+            authLinks.classList.remove('hidden');
+            userLinks.classList.add('hidden');
+            userEmailSpan.textContent = '';
+        }
+    });
+  </script>
+  </body>
 </html>
